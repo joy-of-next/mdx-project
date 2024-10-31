@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   experimental: {
     useLightningcss: true,
   },
+  transpilePackages: ["next-mdx-remote"],
 };
 
 export default nextConfig;

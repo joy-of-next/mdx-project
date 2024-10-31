@@ -1,10 +1,19 @@
-import Image from "next/image";
+import { MDXRemote } from "next-mdx-remote/rsc";
+import { notFound } from "next/navigation";
+
+import { loadContent } from "@/helpers/file-helper";
 import styles from "./page.module.css";
 
-export default function Home() {
+export default async function Home() {
+  const content = await loadContent();
+
+  if (content === null) {
+    notFound();
+  }
+
   return (
     <div className={styles.page}>
-      <h1>Hello Next</h1>
+      <MDXRemote source={content} />
     </div>
   );
 }
