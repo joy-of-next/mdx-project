@@ -1,7 +1,7 @@
 import { readFile } from "fs/promises";
 import path from "path";
 
-const POSTS_DIR = path.join(process.cwd(), "posts");
+const POSTS_DIR = path.join(process.cwd(), "src", "posts");
 
 export const loadContent = async () => {
   let content: string | null = null;
