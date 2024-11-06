@@ -1,19 +1,19 @@
-import { MDXRemote } from "next-mdx-remote/rsc";
-import { notFound } from "next/navigation";
-
-import { loadContent } from "@/helpers/file-helper";
+import { allPosts } from "content-collections";
 import styles from "./page.module.css";
+import Link from "next/link";
 
 export default async function Home() {
-  const content = await loadContent();
-
-  if (content === null) {
-    notFound();
-  }
-
   return (
     <div className={styles.page}>
-      <MDXRemote source={content} />
+      <h1>All Posts</h1>
+
+      <nav>
+        {allPosts.map((post) => (
+          <Link key={post._meta.filePath} href={`/learn/${post._meta.path}`}>
+            {post.title}
+          </Link>
+        ))}
+      </nav>
     </div>
   );
 }

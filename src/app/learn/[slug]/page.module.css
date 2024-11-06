@@ -1,0 +1,18 @@
+.article {
+  max-width: 65ch;
+  margin-inline: auto;
+  padding: 24px;
+
+  header {
+    h1 {
+      font-size: 24px;
+      margin-block-end: 24px;
+    }
+  }
+
+  a {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

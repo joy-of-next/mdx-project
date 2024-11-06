@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { withContentCollections } from "@content-collections/next";
 
 const nextConfig: NextConfig = {
   /* config options here */
@@ -8,4 +9,4 @@ const nextConfig: NextConfig = {
   transpilePackages: ["next-mdx-remote"],
 };
 
-export default nextConfig;
+export default withContentCollections(nextConfig);
