@@ -1,0 +1,122 @@
+.page {
+  display: grid;
+  grid-template-columns: minmax(min-content, 17.5rem) 1fr;
+  background: hsl(0 0 96%);
+  min-height: 100dvh;
+}
+
+.aside {
+  padding-inline: 1.25rem;
+  height: 100%;
+}
+
+.content {
+  background-color: hsl(0 0 99%);
+  padding-inline: 24px;
+  padding-block: 48px;
+
+  article {
+    max-width: 80ch;
+    margin-inline: auto;
+
+    header {
+      margin-bottom: 3em;
+    }
+
+    em {
+      font-style: italic;
+    }
+
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 600;
+    }
+    h2 {
+      font-size: 1.5rem;
+      margin-top: 2em;
+      margin-bottom: 0.5em;
+      font-weight: 600;
+    }
+    h3 {
+      font-size: 1.25rem;
+      margin-top: 2em;
+      margin-bottom: 0.5em;
+      font-weight: 500;
+    }
+    p {
+      font-size: 1rem;
+      margin-bottom: 1.5em;
+      line-height: 1.7;
+    }
+    .code-block {
+      margin-bottom: 1.5em;
+    }
+    ol,
+    ul {
+      margin-bottom: 1.5em;
+    }
+    ol {
+      padding-inline-start: 1.5em;
+    }
+    ul li,
+    ol li {
+      padding-inline-start: 0.2em;
+      margin-bottom: 0.5em;
+    }
+
+    p code {
+      display: inline-block;
+      font-size: 0.9em;
+      padding-inline: .375rem;
+      margin-block: -0.25em;
+      border-radius: .25rem;
+      background: hsl(0 0 98%);
+      border: 1px solid hsl(0 0 96%);
+    }
+    .component-preview,
+    aside {
+      margin-bottom: 1.5em;
+    }
+    p strong {
+      font-weight: 600;
+    }
+    a {
+      color: currentColor;
+      text-decoration-thickness: .125rem;
+      text-underline-offset: 0.125em;
+      font-weight: 500;
+      transition: all 200ms;
+    }
+    a:hover {
+      text-underline-offset: 0.175em;
+    }
+  
+    li {
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+  
+    @media (min-width: 35rem) {
+      h1 {
+        font-size: 2.25rem;
+      }
+  
+      h2 {
+        font-size: 1.75rem;
+      }
+      h3 {
+        font-size: 1.5rem;
+      }
+      p {
+        font-size: 1.125rem;
+      }
+      li {
+        font-size: 1.125rem;
+      }
+    }
+  
+    img {
+      margin-inline: auto;
+    }
+  }
+}

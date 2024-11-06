@@ -1,0 +1,42 @@
+.nav {
+  color: hsl(0 0 50%);
+  position: sticky;
+  top: 0;
+  padding-block: 1.5rem;
+}
+
+.navGroup {
+  margin-block-end: 1.5rem;
+
+  h2 {
+    font-size: 1rem;
+    color: hsl(0 0 20%);
+    margin-block-end: .5rem;
+    font-weight: 500;
+  }
+  p {
+    font-size: .75rem;
+  }
+}
+
+.navItem {
+  display: flex;
+  flex-direction: column;
+  gap: .125rem;
+  font-size: .875rem;
+
+  li {
+    display: flex;
+
+    a {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.active {
+  color: hsl(0 0 20%);
+  font-weight: 500;
+}
