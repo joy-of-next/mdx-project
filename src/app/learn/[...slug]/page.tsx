@@ -4,6 +4,7 @@ import { loadPost } from "@/helpers/load-post";
 
 import styles from "./page.module.css";
 import { Nav } from "./nav";
+import { MDX_COMPONENTS } from "@/shared/mdx-components";
 
 export default async function Page({
   params,
@@ -26,12 +27,12 @@ export default async function Page({
       </aside>
 
       <div className={styles.content}>
-        <article>
-          <header>
+        <article className="article">
+          <header className={styles.header}>
             <h1>{post.title}</h1>
           </header>
 
-          <MDXRemote source={post.content} />
+          <MDXRemote source={post.content} components={MDX_COMPONENTS} />
         </article>
       </div>
     </div>

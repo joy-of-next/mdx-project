@@ -24,4 +24,13 @@ export const navigationConfig: NavigationConfig = [
       },
     ],
   },
+  {
+    title: "MDX 组件",
+    items: [
+      {
+        title: "组件预览",
+        path: "/learn/02-mdx-components/01-component-preview",
+      },
+    ],
+  },
 ];
