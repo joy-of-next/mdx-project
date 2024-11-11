@@ -1,36 +1,26 @@
 import Link from "next/link";
-import { navigationConfig, type NavigationItem } from "@/shared/navigation";
+import { navigationConfig } from "@/shared/navigation";
 import styles from "./nav.module.css";
 
 export function Nav({ url }: { url: string }) {
   return (
-    <div className={styles.nav}>
-      {navigationConfig.map((item, index) => (
+    <nav className={styles.nav}>
+      {navigationConfig.map((item) => (
         <div key={item.title} className={styles.navGroup}>
-          <p>第 {index + 1} 章</p>
-          <h2>{item.title}</h2>
-          <NavItem items={item.items} url={url} />
+          <span className={styles.chapterTitle}>{item.title}</span>
+
+          <ul>
+            {item.items.map((nav) => (
+              <li
+                key={nav.path}
+                className={nav.path === `/learn/${url}` ? styles.active : ""}
+              >
+                <Link href={nav.path}>{nav.title}</Link>
+              </li>
+            ))}
+          </ul>
         </div>
       ))}
-    </div>
-  );
-}
-
-function NavItem({ items, url }: { items: NavigationItem[]; url: string }) {
-  return (
-    <ol className={styles.navItem}>
-      {items.map((nav) => (
-        <li key={nav.path}>
-          <Link
-            href={nav.path}
-            className={`${nav.path} ${
-              "/learn/" + url === nav.path ? styles.active : ""
-            }`}
-          >
-            {nav.title}
-          </Link>
-        </li>
-      ))}
-    </ol>
+    </nav>
   );
 }

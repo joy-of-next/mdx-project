@@ -1,5 +1,5 @@
 .nav {
-  color: hsl(0 0 50%);
+  color: hsl(0 0 20%);
   position: sticky;
   top: 0;
   padding-block: 1.5rem;
@@ -8,35 +8,35 @@
 .navGroup {
   margin-block-end: 1.5rem;
 
-  h2 {
-    font-size: 1rem;
-    color: hsl(0 0 20%);
-    margin-block-end: .5rem;
-    font-weight: 500;
+  .chapterTitle {
+    color: hsl(0 0 50%);
+    margin-block-end: 0.5rem;
+    font-size: 0.75rem;
+    display: block;
   }
-  p {
-    font-size: .75rem;
-  }
-}
 
-.navItem {
-  display: flex;
-  flex-direction: column;
-  gap: .125rem;
-  font-size: .875rem;
+  ul {
+    li {
+      margin-block: 2px;
+      padding-inline: 8px;
+      margin-inline: -8px;
+      transition: background ease-in-out 200ms;
+      border-radius: 4px;
 
-  li {
-    display: flex;
-
-    a {
       &:hover {
-        text-decoration: underline;
+        background: hsl(0 0 90%);
+      }
+
+      a {
+        height: 1.75rem;
+        display: flex;
+        align-items: center;
+        font-size: 0.875rem;
       }
     }
   }
 }
 
 .active {
-  color: hsl(0 0 20%);
-  font-weight: 500;
+  background: hsl(0 0 90%);
 }
