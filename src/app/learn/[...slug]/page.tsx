@@ -5,6 +5,7 @@ import { loadPost } from "@/helpers/load-post";
 import styles from "./page.module.css";
 import { Nav } from "./nav";
 import { MDX_COMPONENTS } from "@/shared/mdx-components";
+import { MobileNav } from "./mobile-nav";
 
 export default async function Page({
   params,
@@ -12,8 +13,6 @@ export default async function Page({
   params: Promise<{ slug: string[] }>;
 }) {
   const slug = (await params).slug;
-  const url = slug.join("/");
-
   const post = loadPost(slug);
 
   if (!post) {
@@ -23,10 +22,12 @@ export default async function Page({
   return (
     <div className={styles.page}>
       <aside className={styles.aside}>
-        <Nav url={url} />
+        <Nav />
       </aside>
 
       <div className={styles.content}>
+        <MobileNav />
+
         <article className="article">
           <header className={styles.header}>
             <h1>{post.title}</h1>

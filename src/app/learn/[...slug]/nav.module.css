@@ -3,6 +3,9 @@
   position: sticky;
   top: 0;
   padding-block: 1.5rem;
+  padding-inline: 1.25rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .navGroup {

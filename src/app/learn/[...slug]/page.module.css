@@ -1,19 +1,26 @@
 .page {
   display: grid;
-  grid-template-columns: minmax(min-content, 17.5rem) 1fr;
   background: hsl(0 0 96%);
   min-height: 100dvh;
+
+  @media (min-width: 48rem) {
+    grid-template-columns: 240px 1fr;
+  }
 }
 
 .aside {
-  padding-inline: 1.25rem;
   height: 100%;
+  display: none;
+
+  @media (min-width: 48rem) {
+    display: block;
+  }
 }
 
 .content {
   background-color: hsl(0 0 99%);
   padding-inline: 24px;
-  padding-block: 48px;
+  padding-block: 24px 48px;
 }
 
 .header {
