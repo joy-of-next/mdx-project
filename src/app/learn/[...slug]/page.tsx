@@ -1,11 +1,9 @@
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { loadPost } from "@/helpers/load-post";
+import { MDX_COMPONENTS } from "@/shared/mdx-components";
 
 import styles from "./page.module.css";
-import { Nav } from "./nav";
-import { MDX_COMPONENTS } from "@/shared/mdx-components";
-import { MobileNav } from "./mobile-nav";
 
 export default async function Page({
   params,
@@ -20,22 +18,12 @@ export default async function Page({
   }
 
   return (
-    <div className={styles.page}>
-      <aside className={styles.aside}>
-        <Nav />
-      </aside>
+    <article className="article">
+      <header className={styles.header}>
+        <h1>{post.title}</h1>
+      </header>
 
-      <div className={styles.content}>
-        <MobileNav />
-
-        <article className="article">
-          <header className={styles.header}>
-            <h1>{post.title}</h1>
-          </header>
-
-          <MDXRemote source={post.content} components={MDX_COMPONENTS} />
-        </article>
-      </div>
-    </div>
+      <MDXRemote source={post.content} components={MDX_COMPONENTS} />
+    </article>
   );
 }
